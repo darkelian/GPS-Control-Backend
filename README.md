@@ -1,7 +1,10 @@
 # GPS-Control-Backend
 Prueba técnica para el puesto de desarrollador fullstack
+<div align="center">
+  <img src="https://github.com/darkelian/GPS-Control-Backend/blob/main/img/2024-05-22%2007-57-55.gif" alt="Video de Demostración">
+</div>
 
-<p align="center"><img src="https://github.com/darkelian/CRUD_LER_Prevencion/blob/main/Frontend/src/assets/GitImg/image.png"/></p> 
+
 Presentación de un CRUD para la prueba tecnica para el puesto de Desarrollador Fullstack, el aplicativo esta hecho con una arquitectura de 3 capas, es decir Modelo, Vista, Controlador.
 
 Postgresql como modelo.
@@ -40,9 +43,5 @@ Ejecuta `./mvnw clean install` para compilar y empaquetar la aplicación, omitie
 
 ### Documentación APIS Swagger
 
-Puedes acceder a la documentación en `http://localhost:8090/swagger-ui/index.html#/` una vez que el servidor esté en ejecución.
-<p align="center"><img src="https://github.com/darkelian/CRUD_LER_Prevencion/blob/main/Frontend/src/assets/GitImg/image2.png"/></p>
-
-## Otras vistas
-<p align="center"><img src="https://github.com/darkelian/CRUD_LER_Prevencion/blob/main/Frontend/src/assets/GitImg/image3.png"/></p>
-<p align="center"><img src="https://github.com/darkelian/CRUD_LER_Prevencion/blob/main/Frontend/src/assets/GitImg/image4.png"/></p>
+Puedes acceder a la documentación en `http://[my domain]/swagger-ui/index.html#/` una vez que el servidor esté en ejecución.
+<p align="center"><img src="https://github.com/darkelian/GPS-Control-Backend/blob/main/img/image.png"/></p>
