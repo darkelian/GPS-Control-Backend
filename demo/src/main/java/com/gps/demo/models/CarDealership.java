@@ -25,12 +25,12 @@ public class CarDealership {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column()
+    @Column(nullable = false)
     private String brand;
 
-    @Column()
+    @Column(nullable = false)
     private String branch;
 
-    @Column()
+    @Column(nullable = false)
     private String applicant;
 }

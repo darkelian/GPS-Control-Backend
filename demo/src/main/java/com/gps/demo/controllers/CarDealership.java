@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,6 @@ import com.gps.demo.dtos.StandardResponseDTO;
 import com.gps.demo.services.CarDealershipService;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,9 +37,11 @@ public class CarDealership {
     // Crear un nuevo registro de carro
     @PostMapping("create")
     @Operation(summary = "Crear un nuevo registro de carro")
-    public ResponseEntity<StandardResponseDTO> createPerson(@Validated @RequestBody RequestCarDealership request) {
+    public ResponseEntity<StandardResponseDTO> createCarDealerships(@Validated @RequestBody RequestCarDealership request) {
         StandardResponseDTO successResponse = new StandardResponseDTO()
-                .fullSuccess(carDealershipService.getAllCarDealerships());
+                .fullSuccess(carDealershipService.createCarDealership(request));
         return ResponseEntity.ok(successResponse);
     }
+
+    // Eliminar un carro por 
 }

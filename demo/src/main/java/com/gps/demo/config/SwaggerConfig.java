@@ -16,6 +16,6 @@ public class SwaggerConfig {
                         .title("Servicios Backend para la prueba técnica de GPS-Control")
                         .description(
                                 "Documentación detallada de los servicios y esquemas para el backend de la prueba técnica de GPS-Control")
-                        .version("1.0.5"));
+                        .version("1.0.6"));
     }
 }
