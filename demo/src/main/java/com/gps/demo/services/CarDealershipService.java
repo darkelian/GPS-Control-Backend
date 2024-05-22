@@ -20,7 +20,7 @@ import lombok.Data;
 public class CarDealershipService {
     private final CarDealershipRepository carDealershipRepository;
 
-    // Eliminar un carro por id
+    // Eliminar un registro
     @Transactional
     public void deleteCarDealership(RequestCarDealership request) {
         carDealershipRepository.deleteByBrandAndBranchAndApplicant(request.getBrand(), request.getBranch(),
@@ -39,10 +39,15 @@ public class CarDealershipService {
         return carDealershipRepository.findById(id).orElse(null);
     }
 
-    // Actualizar un carro
+    // Actualizar un registro
     @Transactional
-    public CarDealership updateCarDealership(CarDealership carDealership) {
-        return carDealershipRepository.save(carDealership);
+    public CarDealership updateCarDealership(CarDealership request) {
+        if (carDealershipRepository.existsById(request.getId())) {
+            return carDealershipRepository.save(request);
+        } else {
+            throw new DataIntegrityViolationException(
+                    "No se encontró ningún registro con la marca, sucursal y solicitante proporcionados.");
+        }
     }
 
     // Crear un carro
