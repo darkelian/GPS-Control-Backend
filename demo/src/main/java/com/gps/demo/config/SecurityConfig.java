@@ -13,7 +13,8 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("https://darkelian.github.io/GPS-Control-Frontend/") // Cambia esto por el origen de tu frontend
+                        .allowedOrigins("http://localhost:4200", "https://darkelian.github.io") // Cambia esto por el
+                                                                                                // origen de tu frontend
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
