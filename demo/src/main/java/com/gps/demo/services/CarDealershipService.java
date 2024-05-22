@@ -22,8 +22,9 @@ public class CarDealershipService {
 
     // Eliminar un carro por id
     @Transactional
-    public void deleteCarDealership(Long id) {
-        carDealershipRepository.deleteById(id);
+    public void deleteCarDealership(RequestCarDealership request) {
+        carDealershipRepository.deleteByBrandAndBranchAndApplicant(request.getBrand(), request.getBranch(),
+                request.getApplicant());
     }
 
     // Consultar todos los carros

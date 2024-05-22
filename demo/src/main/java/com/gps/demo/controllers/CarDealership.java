@@ -1,7 +1,9 @@
 package com.gps.demo.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,11 +39,21 @@ public class CarDealership {
     // Crear un nuevo registro de carro
     @PostMapping("create")
     @Operation(summary = "Crear un nuevo registro de carro")
-    public ResponseEntity<StandardResponseDTO> createCarDealerships(@Validated @RequestBody RequestCarDealership request) {
+    public ResponseEntity<StandardResponseDTO> createCarDealerships(
+            @Validated @RequestBody RequestCarDealership request) {
         StandardResponseDTO successResponse = new StandardResponseDTO()
                 .fullSuccess(carDealershipService.createCarDealership(request));
         return ResponseEntity.ok(successResponse);
     }
 
-    // Eliminar un carro por 
+    // Eliminar un carro por
+    @DeleteMapping("delete")
+    @Operation(summary = "Eliminar un carro por marca, sucursal y solicitante")
+    public ResponseEntity<StandardResponseDTO> deleteCarDealership(
+            @Validated @RequestBody RequestCarDealership request) {
+        carDealershipService.deleteCarDealership(request);
+        StandardResponseDTO response = new StandardResponseDTO()
+                .fullSuccess("Registro de " + request.getBrand() + " eliminado correctamente");
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
